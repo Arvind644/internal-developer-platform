@@ -1,0 +1,80 @@
+{
+        "identifier": "eks_cluster_request",
+        "title": "EKS Cluster Request",
+        "icon": "Book",
+        "schema": {
+          "properties": {
+            "request_pr_url": {
+              "icon": "Github",
+              "title": "Request PR URL",
+              "type": "string",
+              "description": "The cluster request's PR URL",
+              "format": "url"
+            },
+            "request_pr_number": {
+              "icon": "Github",
+              "title": "Request PR Number",
+              "type": "number",
+              "minimum": 0
+            },
+            "node_count": {
+              "icon": "Node",
+              "title": "Node Count",
+              "type": "number",
+              "description": "Amount of nodes for this cluster"
+            },
+            "node_size": {
+              "icon": "Node",
+              "title": "Node Size",
+              "type": "string",
+              "description": "The node size for the cluster nodes",
+              "enum": [
+                "small",
+                "medium",
+                "large"
+              ],
+              "enumColors": {
+                "small": "lightGray",
+                "medium": "lightGray",
+                "large": "lightGray"
+              }
+            },
+            "status": {
+              "icon": "BlankPage",
+              "title": "Status",
+              "description": "Status of the cluster request (Pending/Approved)",
+              "type": "string",
+              "default": "Pending",
+              "enum": [
+                "Pending",
+                "Approved",
+                "Denied"
+              ],
+              "enumColors": {
+                "Pending": "yellow",
+                "Approved": "green",
+                "Denied": "red"
+              }
+            }
+          },
+          "required": []
+        },
+        "mirrorProperties": {},
+        "calculationProperties": {},
+        "relations": {
+          "eks_cluster": {
+            "title": "EKS Cluster",
+            "description": "The cluster created for this request",
+            "target": "eks_cluster",
+            "required": false,
+            "many": false
+          },
+          "upbound_control_plane": {
+            "title": "Upbound Control Plane",
+            "description": "The control plane this cluster was requested for",
+            "target": "upbound_control_plane",
+            "required": false,
+            "many": false
+          }
+        }
+      }
