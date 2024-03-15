@@ -7,7 +7,7 @@ jobs:
   apply-clusters:
     runs-on: ubuntu-latest
     env:
-      UPBOUND_ORG_ID: port
+      UPBOUND_ORG_ID: portplatform
     steps:
       - uses: actions/checkout@v4
         with:

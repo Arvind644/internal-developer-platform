@@ -12,7 +12,7 @@ jobs:
   delete-cluster:
     runs-on: ubuntu-latest
     env:
-      UPBOUND_ORG_ID: port
+      UPBOUND_ORG_ID: portplatform
     steps:
       - uses: port-labs/port-github-action@v1
         with:
